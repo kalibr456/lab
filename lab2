@@ -1,0 +1,19 @@
+from fastapi import FastAPI
+app = FastAPI()
+answer = 0
+@app.post("/calculator")
+def calculator(ch1: int, ch2: int, dei: str):
+    if dei == "+":
+        answer=ch1 + ch2
+        return answer
+    if dei == "-":
+        answer=ch1 - ch2
+        return answer
+    if dei == "*":
+        answer=ch1 * ch2
+        return answer
+    if dei == "/":
+        answer=ch1 / ch2
+        return answer
+    else:
+        return {"error"}
