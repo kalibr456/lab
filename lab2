@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI
 app = FastAPI()
 answer = 0
@@ -16,7 +15,7 @@ def calculator(ch1: int, ch2: int, dei: str):
     if dei == "/":
         if ch2 == 0:
            return{"error"}
-        elif answer==ch1 / ch2:
-           return answer
+        answer = ch1 / ch2
+        return answer
     else:
         return {"error"}
